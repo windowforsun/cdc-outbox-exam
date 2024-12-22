@@ -1,0 +1,5 @@
+rootProject.name = 'cdc-outbox-exam'
+include 'order-service'
+include 'shipment-service'
+include 'common'
+

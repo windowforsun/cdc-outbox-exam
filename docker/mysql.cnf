@@ -1,0 +1,10 @@
+[mysqld]
+server-id = 1
+log_bin = mysql-bin
+binlog_format = ROW
+log_slave_updates = ON
+binlog_row_image = FULL
+# 필수는 아님
+expire_logs_days = 0
+# slave 인 경우에만
+#log_slave_updates = 1

@@ -1,0 +1,11 @@
+
+
+PUT http://localhost:8080/order
+Content-Type: application/json
+
+{
+  "item": "test1",
+  "quantity": 1,
+  "totalPrice": 101,
+  "status" : "ENTERED"
+}

@@ -1,0 +1,35 @@
+plugins {
+    id 'com.google.cloud.tools.jib' version '3.2.0'
+}
+
+dependencies {
+    implementation project(':common')
+}
+
+jib {
+    from {
+        image = "openjdk:11-jre-slim"
+        // for mac m1
+        platforms {
+            platform {
+                architecture = "arm64"
+                os = "linux"
+            }
+//            platform {
+//                architecture = "amd64"
+//                os = "linux"
+//            }
+        }
+    }
+    to {
+        image = "shipment-service"
+        tags = ["${project.version}".toString()]
+    }
+    container {
+        mainClass = "com.windowforsun.cdc.outbox.shipment.ShipmentApplication"
+        ports = ["8081"]
+        jvmFlags = [
+                "-Dspring.profiles.active=docker"
+        ]
+    }
+}

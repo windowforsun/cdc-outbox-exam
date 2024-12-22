@@ -1,0 +1,7 @@
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://exam-db:3306/exam?serverTimezone=Asia/Seoul
+  kafka:
+    bootstrap-servers: kafka:9092
